@@ -1,0 +1,69 @@
+function AboutSection() {
+  const features = [
+    {
+      icon: <Leaf className="h-6 w-6 text-green-600" />,
+      title: "Sustainable Practices",
+      description: "Empower organizations to participate in eco-friendly initiatives through our blockchain-based platform."
+    },
+    {
+      icon: <Shield className="h-6 w-6 text-green-600" />,
+      title: "Secure Transactions",
+      description: "Ensure all green credit transactions are secure, transparent, and irreversible with blockchain technology."
+    },
+    {
+      icon: <BarChart className="h-6 w-6 text-green-600" />,
+      title: "Thriving Marketplace",
+      description: "Create a dynamic ecosystem for trading green credits, fostering growth in sustainable projects."
+    }
+  ]
+
+  return (
+    <section id="about" className="py-24 px-4 bg-gradient-to-b from-[#f5e6d3] to-green-50">
+      <div className="max-w-6xl mx-auto">
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl font-bold mb-12 text-center text-green-800"
+        >
+          About Greenify Chain
+        </motion.h2>
+        <div className="grid md:grid-cols-3 gap-12 mb-16">
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
+              className="bg-white bg-opacity-50 backdrop-blur-lg rounded-xl p-6 shadow-lg border border-green-200"
+            >
+              <div className="flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-green-100">
+                {feature.icon}
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-green-700">{feature.title}</h3>
+              <p className="text-gray-600">{feature.description}</p>
+            </motion.div>
+          ))}
+        </div>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="bg-white bg-opacity-70 backdrop-blur-lg rounded-2xl p-8 shadow-xl border border-green-200"
+        >
+          <div className="space-y-6 text-lg text-gray-700">
+            <p>
+              At <strong className="text-green-700">Greenify Chain</strong>, we believe that sustainability and transparency should go hand in hand. Our platform leverages the power of blockchain technology to transform how green credits are issued, tracked, and traded. By digitizing the entire process, we create an efficient and secure system that ensures all environmental contributions are accurately recorded and easily accessible.
+            </p>
+            <p>
+              Our mission is to empower organizations to take part in sustainable practices while providing them with a system that encourages accountability. Through blockchain, every transaction is secure, transparent, and irreversible. This means that green credits—once issued—can be easily tracked and traded, creating a thriving marketplace for eco-friendly projects.
+            </p>
+            <p>
+              By offering an easy-to-use application system for green credits, a secure verification process, and a decentralized marketplace, Greenify Chain is paving the way for a more sustainable and accountable future. We envision a world where companies and individuals alike can contribute to a greener planet, all while gaining real value from their efforts. Join us in making a lasting impact—one green credit at a time.
+            </p>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
